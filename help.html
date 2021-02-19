@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Voyage</title>
+<link alt="logo" rel="icon" href="./VLogo2.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  border-radius: 5px;
+}
+
+li {
+  float: Right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-radius:5px;
+}
+
+li a:hover {
+  background-color: white;
+  color:black;
+  
+}
+
+.fback {
+    width: 80%;
+    height: 200px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #555;
+    outline: none;
+    display: block;
+    margin: auto;
+    margin-top: 10%;
+	border-radius: 50px;
+}
+
+.fback:focus {
+  background-color: #e6fff2;
+}
+
+.fsubmit {
+  border-color: black;
+  color: black;
+  margin: 0.7% 1.5%;
+  padding: 0.75% 1%;
+  border-radius:20px;
+  border-style: solid;
+  background-color: #e6fff2;
+  display: block;
+  margin: auto;
+  margin-top: 7px;
+}
+.fsubmit:hover {
+ background-color: black;
+ color: white;
+ border-color: black;
+}
+.review-div{
+ width: 80%;
+ height: 100px;
+ padding: 12px 20px;
+ box-sizing: border-box;
+ border: 1px solid black;
+ outline: none;
+ display: block;
+ margin: auto;
+ border-radius: 40px;
+ background-color: #e6e6e6;
+ margin-bottom: 8px;
+}
+
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a class="active"  href="#feedback"><b>FeedBack</b></a></li>
+  <li><a href="dev.html"><b>Developers</b></a></li>
+  <li><a href="index.html"><b>Home</b></a></li>
+</ul>
+
+<div id="reviews">
+<div class="review-div" style="margin-top: 1%;"> This app is really usefull and makes all my reservations easy and handy, love to use this app. </div> 
+<div class="review-div"> I installed this app when I wanted to plan the trip and this app made my job easy and there is literally everything which I need for a trip and I would recommend others to use this app.</div> 
+</div>
+<div class="feedback" > <textarea id="rtext" class="fback" name="fback" rows="10" cols="30" placeholder="Help us improve with your feedback....." style="width: 80%;
+    height: 200px;"></textarea></div>
+	<button class="fsubmit" onclick="submitf()" ><b> Submit </b></button>
+	
+<script>
+
+function submitf(){
+  var x = document.getElementById("rtext").value;
+  var div = document.createElement("DIV");
+  div.innerHTML = x;
+  div.classList.add("review-div");
+  var reviewsDiv = document.getElementById("reviews");
+  reviewsDiv.appendChild(div);
+}
+
+</script>
+</body>
+
+</html>
